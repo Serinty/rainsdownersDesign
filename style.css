@@ -214,8 +214,11 @@ header Section
   width: 8rem;
   transition: 0.4s ease-in-out;
   padding: 0.8rem;
-  background-color: rgba(255, 255, 255, 0.747);
+  background-color: rgba(238, 238, 221, 0.662745098);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
   border-radius: 5px;
+  z-index: 999;
 }
 
 .logo-width {
@@ -236,6 +239,20 @@ header Section
 .inside-nav .large-nav {
   display: none;
 }
+.inside-nav nav {
+  background-color: transparent;
+  position: relative;
+  padding: 0 1rem;
+}
+.inside-nav nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(238, 238, 221, 0.662745098);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+  border-radius: 10px;
+}
 .inside-nav nav > ul {
   gap: 0rem;
 }
@@ -246,6 +263,12 @@ header Section
 .inside-nav nav > ul li:hover .submenu {
   visibility: visible;
   opacity: 1;
+}
+.inside-nav nav > ul li:hover .submenu::before {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
 }
 .inside-nav nav > ul li:hover > a {
   color: #113322;
@@ -269,16 +292,21 @@ header Section
   padding: 1rem 0.3rem;
   position: absolute;
   top: 100%;
+  opacity: 0;
+  visibility: hidden;
 }
 .inside-nav nav .submenu.grid::before {
   position: absolute;
   content: "";
   display: block;
-  -webkit-backdrop-filter: blur(50px);
-          backdrop-filter: blur(50px);
   height: 100%;
   width: 100%;
   inset: 0;
+  background-color: rgba(238, 238, 221, 0.1450980392);
+  opacity: 0;
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+  transition: 0.3s ease-in-out;
 }
 .inside-nav nav .submenu.grid a {
   display: flex;
@@ -295,21 +323,40 @@ header Section
   border-bottom: 1px solid rgba(102, 32, 32, 0.2941176471);
   transform: scale(1.02);
 }
-.inside-nav nav .sub-col::before {
-  position: absolute;
-  content: "";
-  display: block;
-  -webkit-backdrop-filter: blur(50px);
-          backdrop-filter: blur(50px);
-  height: 100%;
-  width: 100%;
-  inset: 0;
+.inside-nav nav .sub-col {
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  background-color: rgba(238, 238, 221, 0.3843137255);
 }
 
 .drop-nav {
-  background-color: rgba(238, 238, 221, 0.7529411765);
   padding: 0 2rem;
+}
+.drop-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(238, 238, 221, 0.7529411765);
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  height: 100%;
+  width: 100%;
+  display: block;
   filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.1)) drop-shadow(0 8px 5px rgba(0, 0, 0, 0.08));
+}
+.drop-nav nav {
+  background-color: transparent;
+  position: relative;
+  padding: 0 1rem;
+}
+.drop-nav nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+  border-radius: 10px;
 }
 
 .nav_small {
@@ -411,6 +458,8 @@ header Section
 
 .nav-bg {
   background-color: rgba(107, 107, 107, 0.5137254902);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   margin: 0 1rem;
   position: absolute;
   inset: 0;
@@ -476,11 +525,16 @@ Main Section
   font-size: 2rem;
   font-weight: 700;
   text-shadow: 2px 7px 5px rgba(4, 23, 15, 0.3), 0px -4px 10px rgba(255, 255, 255, 0.2);
+  background-color: rgba(238, 238, 221, 0.662745098);
+  padding: 0.8rem;
+  border-radius: 5px;
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
 }
 .main-sec .content {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 35%;
+  left: 25%;
   transform: translate(-50%, -50%);
   z-index: 60;
   width: 100%;

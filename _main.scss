@@ -21,12 +21,16 @@ Main Section
     font-weight: 700;
     text-shadow: 2px 7px 5px rgba(4, 23, 15, 0.3),
       0px -4px 10px rgba(255, 255, 255, 0.2);
+    background-color: #eeeedda9;
+    padding: 0.8rem;
+    border-radius: 5px;
+    backdrop-filter: blur(24px);
   }
 
   .content {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 35%;
+    left: 25%;
     transform: translate(-50%, -50%);
     z-index: 60;
     width: 100%;
@@ -88,7 +92,6 @@ Main Section
     }
   }
 }
-
 
 @media (min-width: 400px) {
 }
