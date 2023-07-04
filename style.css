@@ -605,15 +605,6 @@ Main Section
 }
 .main-sec .bg-wrapper {
   overflow: hidden;
-  position: relative;
-}
-.main-sec .bg-wrapper::after {
-  position: absolute;
-  content: "";
-  inset: 0;
-  background-color: rgba(238, 238, 221, 0.1294117647);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
 }
 .main-sec #bg-video {
   width: 100%;

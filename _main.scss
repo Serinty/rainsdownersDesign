@@ -49,14 +49,6 @@ Main Section
 
   .bg-wrapper {
     overflow: hidden;
-    position: relative;
-    &::after {
-      position: absolute;
-      content: "";
-      inset: 0;
-      background-color: #eeeedd21;
-      backdrop-filter: blur(2px);
-    }
   }
 
   #bg-video {
