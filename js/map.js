@@ -6,7 +6,7 @@ var coutryData = {
       id: "10018",
       properties: {
         name: "Tanzania",
-        density: 26,
+        languages: ["Swahili", "English"],
         path: "/world/Tanzania",
       },
       geometry: {
@@ -69,7 +69,11 @@ var coutryData = {
     {
       type: "Feature",
       id: "5159",
-      properties: { name: "Kenya", density: 47, path: "/world/Kenya" },
+      properties: {
+        name: "Kenya",
+        languages: ["Swahili", "English"],
+        path: "/world/Kenya",
+      },
       geometry: {
         coordinates: [
           [
@@ -120,7 +124,7 @@ var coutryData = {
       id: "5240",
       properties: {
         name: "Uganda",
-        density: 112,
+        languages: ["Swahili", "Ugandan", "English"],
         path: "/world/Uganda",
       },
       geometry: {
@@ -163,7 +167,7 @@ var coutryData = {
       id: "5099",
       properties: {
         name: "Botswana",
-        density: 10,
+        languages: ["English"],
         path: "/world/Botswana",
       },
       geometry: {
@@ -217,7 +221,11 @@ var coutryData = {
     {
       type: "Feature",
       id: "5211",
-      properties: { name: "Rwanda", density: 5, path: "/world/Rwanda" },
+      properties: {
+        name: "Rwanda",
+        languages: ["kinyarwanda", "English", "French", "Swahili"],
+        path: "/world/Rwanda",
+      },
       geometry: {
         coordinates: [
           [
@@ -263,8 +271,18 @@ var greenIcon = L.icon({
   shadowUrl: "leaf-shadow.png",
 
   iconSize: [20, 30], // size of the icon
-
 });
+
+// Country
+
+countries = [...document.querySelectorAll(".country")];
+let minus = window.innerWidth > 678 ? 120 : 80;
+
+const divLocation = countries.map((country) => {
+
+  return country.getBoundingClientRect().top - minus;
+});
+
 const popupText = ["Tanzania", "Kenya", "Uganda", "Botswana", "Rwanda"];
 const markers = locations.map((location, index) =>
   L.marker(location, { icon: greenIcon })
@@ -274,7 +292,7 @@ const markers = locations.map((location, index) =>
       this.openPopup();
     })
     .on("click", function (e) {
-      window.location.hash = "#home";
+      window.scrollTo({ top: divLocation[index], behavior: "smooth" });
     })
 );
 
@@ -289,7 +307,9 @@ info.onAdd = function (map) {
 
 info.update = function (props) {
   const contents = props
-    ? `<b>${props.name}</b><br />${props.density} people / mi<sup>2</sup>`
+    ? `<b>${props.name}</b><br />Offical Languages: ${props.languages
+        .map((lan) => lan)
+        .join(", ")}`
     : "Hover over a country";
   this._div.innerHTML = `<h4>Africa Population Density</h4>${contents}`;
 };

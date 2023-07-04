@@ -9,7 +9,6 @@ const subnav = [...document.querySelectorAll(".inside-nav .submenu")];
 const cross = document.querySelector(".cross");
 const navBG = document.querySelector(".nav-bg");
 
-
 // Toggle Hamburger
 const hamburger = () => {
   toggleMobileNav.classList.toggle("toggle-mobile-menu");
@@ -21,13 +20,13 @@ const hamburger = () => {
 };
 
 cross.addEventListener("click", () => {
-    toggleMobileNav.classList.remove("toggle-mobile-menu");
-    html.classList.remove("hidden-overflow");
-    blackBG.classList.remove("toggle");
-    navSmall.classList.remove("nav-visibility");
-    cross.classList.remove("rotate-cross");
-    navBG.classList.remove("nav-bg-opacity");
-})
+  toggleMobileNav.classList.remove("toggle-mobile-menu");
+  html.classList.remove("hidden-overflow");
+  blackBG.classList.remove("toggle");
+  navSmall.classList.remove("nav-visibility");
+  cross.classList.remove("rotate-cross");
+  navBG.classList.remove("nav-bg-opacity");
+});
 // navbar shadow on scorll
 window.addEventListener("scroll", () => {
   let width = document.body.clientWidth;
@@ -35,7 +34,7 @@ window.addEventListener("scroll", () => {
   if (window.scrollY > 20) {
     navInside.classList.add("drop-nav");
     logoImg.classList.add("logo-width");
-  
+
     subnav.map((sub) => {
       sub.classList.add("sub-col");
     });
@@ -67,3 +66,22 @@ let vid = document.querySelector("#bg-video");
 vid.onloadeddata = function () {
   vid.style.opacity = "100%";
 };
+
+// Dinamically import instagram images
+
+const url =
+  "https://graph.finstagram.com/me/media?fields=id,caption,media_url&access_token=IGQVJVN05qVFFzemVNNXdoeU9nOXJ0MjctR2VnZAC1BSHVWUWxfV2REWm5NWWFUN01Nby16T1ZARdXZAHTVVmUnVfUEN3R2ZAOTVFxVS1LWko2cGU1bEZASVXhmYjhpbFptOVduOUlYY0xmOHlJUktudDRkagZDZD";
+
+let images = [];
+const insta = document.querySelector(".instagram .images");
+
+async function instaAccess() {
+  const response = await fetch(url);
+  const jsonData = await response.json();
+
+  jsonData.data.map((item) => {
+    insta.innerHTML += `<img src=${item.media_url} alt=${item.id}>`;
+  });
+}
+
+instaAccess();
