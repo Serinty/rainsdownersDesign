@@ -69,19 +69,20 @@ vid.onloadeddata = function () {
 
 // Dinamically import instagram images
 
-const url =
-  "https://graph.finstagram.com/me/media?fields=id,caption,media_url&access_token=IGQVJVN05qVFFzemVNNXdoeU9nOXJ0MjctR2VnZAC1BSHVWUWxfV2REWm5NWWFUN01Nby16T1ZARdXZAHTVVmUnVfUEN3R2ZAOTVFxVS1LWko2cGU1bEZASVXhmYjhpbFptOVduOUlYY0xmOHlJUktudDRkagZDZD";
+// const url =
+//   "https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=IGQVJVN05qVFFzemVNNXdoeU9nOXJ0MjctR2VnZAC1BSHVWUWxfV2REWm5NWWFUN01Nby16T1ZARdXZAHTVVmUnVfUEN3R2ZAOTVFxVS1LWko2cGU1bEZASVXhmYjhpbFptOVduOUlYY0xmOHlJUktudDRkagZDZD";
 
-let images = [];
-const insta = document.querySelector(".instagram .images");
+// let images = [];
+// const insta = document.querySelector(".instagram .images");
 
-async function instaAccess() {
-  const response = await fetch(url);
-  const jsonData = await response.json();
+// async function instaAccess() {
+//   const response = await fetch(url);
+//   const jsonData = await response.json();
+//   console.log(jsonData)
 
-  jsonData.data.map((item) => {
-    insta.innerHTML += `<img src=${item.media_url} alt=${item.id}>`;
-  });
-}
+//   jsonData.data.map((item) => {
+//     insta.innerHTML += `<img src=${item.media_url} alt=${item.id}>`;
+//   });
+// }
 
-instaAccess();
+// instaAccess();

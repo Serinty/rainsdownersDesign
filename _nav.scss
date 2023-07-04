@@ -70,14 +70,14 @@
 
           @-moz-document url-prefix() {
             &::before {
-              background-color: #cfcf3ec9;
+              background-color: white;
             }
           }
         }
 
         &:hover > a {
           color: $primary;
-          background-color: #cfcf3ec9;
+          background-color: white;
           border-top-left-radius: 3px;
           border-top-right-radius: 3px;
         }
@@ -143,11 +143,11 @@
 
     .sub-col {
       backdrop-filter: blur(15px);
-      background-color: #cfcf3e79;
+      background-color: #ffffff5e;
     }
     @-moz-document url-prefix() {
       .sub-col {
-        background-color: #cfcf3e;
+        background-color: #ffff;
       }
     }
   }
