@@ -418,7 +418,7 @@ header Section
   overflow: auto;
 }
 .nav_small .nav-links-small .mobile-nav-ul {
-  background-color: #ffffcc;
+  background-color: #ffffff;
   width: 100%;
   height: 100%;
   padding: 0 1rem;
@@ -439,7 +439,7 @@ header Section
 }
 .nav_small .nav-links-small .submenu li {
   padding: 0.5rem 0;
-  border-bottom: 1px solid wheat;
+  border-bottom: 1px solid rgba(102, 32, 32, 0.1843137255);
 }
 .nav_small .nav-links-small .nav-contact {
   padding: 0.5rem 0;
@@ -455,7 +455,7 @@ header Section
 }
 .nav_small .link {
   padding: 0.5rem 0;
-  border-bottom: 1px solid wheat;
+  border-bottom: 1px solid rgba(102, 32, 32, 0.2392156863);
 }
 .nav_small .link a {
   width: 100%;
@@ -749,6 +749,10 @@ Map Section
   justify-content: center;
   align-items: center;
 }
+.map .all-anchor {
+  position: relative;
+  top: -85px;
+}
 .map .country-info {
   display: grid;
   gap: 1.5rem;
@@ -800,10 +804,16 @@ Map Section
   #map {
     height: 380px;
   }
+  .all-anchor {
+    top: -100px;
+  }
 }
 @media (min-width: 768px) {
   #map {
     height: 450px;
+  }
+  .all-anchor {
+    top: -120px;
   }
 }
 @media (min-width: 1280px) {

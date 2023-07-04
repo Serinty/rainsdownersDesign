@@ -14,6 +14,10 @@ Map Section
     align-items: center;
   }
 
+  .all-anchor {
+    position: relative;
+    top: -85px;
+  }
   .country-info {
     display: grid;
     gap: 1.5rem;
@@ -73,6 +77,10 @@ Map Section
   #map {
     height: 380px;
   }
+
+  .all-anchor {
+    top: -100px;
+  }
 }
 @media (min-width: 768px) {
   .map {
@@ -83,6 +91,10 @@ Map Section
   #map {
     height: 450px;
   }
+
+  .all-anchor {
+    top: -120px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -91,7 +103,7 @@ Map Section
     }
   }
 
-    #map {
+  #map {
     height: 600px;
   }
 }

@@ -250,7 +250,16 @@ var coutryData = {
   ],
 };
 
-const map = L.map("map").setView([-2, 22], 3.3);
+// Country
+
+countries = [...document.querySelectorAll(".country")];
+let minus = window.innerWidth > 678 ? 100 : 80;
+
+const divLocation = countries.map((country) => {
+  return country.offsetTop - minus;
+});
+
+const map = L.map("map", { scrollWheelZoom: false }).setView([-2, 22], 3.3);
 
 const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
@@ -273,16 +282,6 @@ var greenIcon = L.icon({
   iconSize: [20, 30], // size of the icon
 });
 
-// Country
-
-countries = [...document.querySelectorAll(".country")];
-let minus = window.innerWidth > 678 ? 120 : 80;
-
-const divLocation = countries.map((country) => {
-
-  return country.getBoundingClientRect().top - minus;
-});
-
 const popupText = ["Tanzania", "Kenya", "Uganda", "Botswana", "Rwanda"];
 const markers = locations.map((location, index) =>
   L.marker(location, { icon: greenIcon })
@@ -292,7 +291,8 @@ const markers = locations.map((location, index) =>
       this.openPopup();
     })
     .on("click", function (e) {
-      window.scrollTo({ top: divLocation[index], behavior: "smooth" });
+      window.location.href = "#" + popupText[index];
+      history.replaceState(null, null, url);
     })
 );
 
