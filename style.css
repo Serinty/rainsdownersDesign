@@ -663,42 +663,42 @@ Main Section
   }
 }
 /*---------------------------------------------------- 
- Endless Section
+ pagecontent Section
 ----------------------------------------------------*/
-.endless .paras {
+.pagecontent .paras {
   display: grid;
   gap: 1rem;
 }
-.endless .paras p {
+.pagecontent .paras p {
   font-size: 1.25rem;
 }
-.endless .cards {
+.pagecontent .cards {
   margin-top: 3rem;
   display: grid;
   gap: 2rem;
 }
-.endless ul {
+.pagecontent ul {
   margin-left: 0.3rem;
 }
-.endless li::before {
+.pagecontent li::before {
   content: "•";
   color: #113322;
   margin-right: 0.3rem;
 }
-.endless .card {
+.pagecontent .card {
   border: 1px solid rgba(17, 51, 34, 0.2549019608);
   padding: 1rem;
   border-radius: 10px;
   display: grid;
   gap: 1rem;
 }
-.endless img {
+.pagecontent img {
   max-width: 25rem;
   border-radius: 10px;
 }
 
 @media (min-width: 640px) {
-  .endless .cards {
+  .pagecontent .cards {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -706,7 +706,7 @@ Main Section
   }
 }
 /*---------------------------------------------------- 
- Endless Section
+ pagecontent Section
 ----------------------------------------------------*/
 .instagram .wrapper {
   display: grid;
