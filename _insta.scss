@@ -5,17 +5,17 @@
     justify-content: center;
     align-items: center;
   }
-  h1 {
-    font-size: 3.5rem;
-  }
 
   .images {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     img {
       max-width: 20rem;
       width: 100%;
+      border-radius: 5px;
     }
   }
 }

@@ -186,7 +186,7 @@ main::after {
   margin-bottom: 1.5rem;
 }
 .header h2 {
-  font-size: 2.7rem;
+  font-size: 1.8rem;
   font-weight: 700;
   position: relative;
 }
@@ -705,17 +705,17 @@ Main Section
   justify-content: center;
   align-items: center;
 }
-.instagram h1 {
-  font-size: 3.5rem;
-}
 .instagram .images {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 .instagram .images img {
   max-width: 20rem;
   width: 100%;
+  border-radius: 5px;
 }
 
 .sk-ig-post-img img {
@@ -984,7 +984,15 @@ Message Section
   padding: 0;
 }
 
+@media (min-width: 400px) {
+  .header h2 {
+    font-size: 2.2rem;
+  }
+}
 @media (min-width: 640px) {
+  .header h2 {
+    font-size: 2.7rem;
+  }
   main {
     margin-top: 2rem;
   }
