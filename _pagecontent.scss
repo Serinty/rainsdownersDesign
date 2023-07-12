@@ -1,0 +1,50 @@
+.pagecontent {
+  .wrap {
+    padding: 0 2rem;
+  }
+
+  .paras {
+    display: grid;
+    gap: 1rem;
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+  
+  ul {
+    margin-left: 0.3rem;
+  }
+  li::before {
+    content: "\2022";
+    color: $primary;
+    margin-right: 0.3rem;
+  }
+
+  #map {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    z-index: 0;
+    height: 70vh;
+    width: auto;
+  }
+
+  .all-anchor {
+    position: relative;
+    top: -120px;
+  }
+
+  .country-info {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .country {
+    display: grid;
+    gap: 0.5rem;
+    h3 {
+      font-size: 1.7rem;
+      font-weight: bold;
+    }
+  }
+}

@@ -66,23 +66,30 @@ let vid = document.querySelector("#bg-video");
 vid.onloadeddata = function () {
   vid.style.opacity = "100%";
 };
+const token =
+  "IGQVJWZAGgtWGtKOU1od1UzMWJCWmQwT05iQmJaOHMwNVZAMV3A4MFVKRzZAIekhqNm1NcWJQVGJKZAXdHM0ktOWNRVUozb1ZAlOXN4R0Y2azJITmZAPX1pyQlVMUS1HeVRDNllSUm94R2JSTFUyb0poaFN4TwZDZD";
 
+const extra =
+  "EAAIV9hODDvABAP2ofSDPbUH8w4CfF87Ae8YYx8mrkILT2PZBWPVaFzM5doZCNwYgvkB6fjOi6sXqEZAQPK7EK2vESHXPULxD19fK3Guhka9Tvts8M8cBUpzzVX9L95fEq1mgadtsExJeviqFoQd21ZCaUTZB8lTfCVAFtvq28jWqEZCfBaopbK";
+
+const appSecret = "c3437db0b81147a095dcce26731af73c";
 // Dinamically import instagram images
 
-// const url =
-//   "https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=IGQVJVN05qVFFzemVNNXdoeU9nOXJ0MjctR2VnZAC1BSHVWUWxfV2REWm5NWWFUN01Nby16T1ZARdXZAHTVVmUnVfUEN3R2ZAOTVFxVS1LWko2cGU1bEZASVXhmYjhpbFptOVduOUlYY0xmOHlJUktudDRkagZDZD";
+const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=${token}`;
 
-// let images = [];
-// const insta = document.querySelector(".instagram .images");
+// const urlExtedn = `https://graph.instagram.com/access_token?grant_type=ig_exchange_token&client_secret=${appSecret}&access_token=${token}`;
 
-// async function instaAccess() {
-//   const response = await fetch(url);
-//   const jsonData = await response.json();
-//   console.log(jsonData)
+let images = [];
+const insta = document.querySelector(".instagram .images");
 
-//   jsonData.data.map((item) => {
-//     insta.innerHTML += `<img src=${item.media_url} alt=${item.id}>`;
-//   });
-// }
+async function instaAccess() {
+  const response = await fetch(url);
+  const jsonData = await response.json();
+  console.log(jsonData);
 
-// instaAccess();
+  jsonData?.data?.map((item) => {
+    insta.innerHTML += `<img src=${item.media_url} alt=${item.id}>`;
+  });
+}
+
+instaAccess();
