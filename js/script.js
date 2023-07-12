@@ -67,7 +67,7 @@ vid.onloadeddata = function () {
   vid.style.opacity = "100%";
 };
 const token =
-  "IGQVJVYmV2MEliYnNNWUFSWkc5MmdjdkpZAZAWhzLV9mdHQydEQtZA3BLMTBYZAGg0d0dsNlo1WlhMZAmo5ZAzFMYlI1TTlHWHNZAaXE3QlhTcEwxZAlBPUjRkbTdGUmZAXaXVZAZAkpfOGpjSGZAGNC1UZAWhGTzY5agZDZD";
+  "IGQVJWZAGgtWGtKOU1od1UzMWJCWmQwT05iQmJaOHMwNVZAMV3A4MFVKRzZAIekhqNm1NcWJQVGJKZAXdHM0ktOWNRVUozb1ZAlOXN4R0Y2azJITmZAPX1pyQlVMUS1HeVRDNllSUm94R2JSTFUyb0poaFN4TwZDZD";
 
 const extra =
   "EAAIV9hODDvABAP2ofSDPbUH8w4CfF87Ae8YYx8mrkILT2PZBWPVaFzM5doZCNwYgvkB6fjOi6sXqEZAQPK7EK2vESHXPULxD19fK3Guhka9Tvts8M8cBUpzzVX9L95fEq1mgadtsExJeviqFoQd21ZCaUTZB8lTfCVAFtvq28jWqEZCfBaopbK";
@@ -87,7 +87,7 @@ async function instaAccess() {
   const jsonData = await response.json();
   console.log(jsonData);
 
-  jsonData.data.map((item) => {
+  jsonData?.data?.map((item) => {
     insta.innerHTML += `<img src=${item.media_url} alt=${item.id}>`;
   });
 }
